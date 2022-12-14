@@ -1,13 +1,36 @@
+import {React, Component } from 'react';
 import './App.css';
 
-function App() {
+class App extends Component() {
+  constructor() {
+    super()
+    this.state = {
+      arr: [],
+      fullName: "wissal",
+      bio:"blaa",
+      image:'',
+      profession:"blala",
+      show: false
+                  }
+                  }
+                  componentDidMount() {
+                    this.setState({ arr: {} })}
+                  handleShow(){
+                    this.setState({show:true})
+                  }
+
+
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-       
-      </header>
+      
+      <button  >
+          profile information
+        </button>
+      
     </div>
   );
-}
+}}
 
 export default App;

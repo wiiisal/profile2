@@ -1,36 +1,29 @@
-import {React, Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
 
-class App extends Component() {
-  constructor() {
+export default class App extends Component {
+  constructor(){
     super()
-    this.state = {
-      arr: [],
-      fullName: "wissal",
-      bio:"blaa",
-      image:'',
-      profession:"blala",
-      show: false
-                  }
-                  }
-                  componentDidMount() {
-                    this.setState({ arr: {} })}
-                  handleShow(){
-                    this.setState({show:true})
-                  }
-
-
-
+    this.state={
+      array:[],
+      FullName:"wissal",
+      image:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      bio:"hello I m wissal",
+      profesion:"bleda",
+      show:false
+    }
+  }
+  handleShow(){
+    this.setState({show:!this.state.show})
+  }
   render() {
-  return (
-    <div className="App">
+    const {show,FullName,bio,profesion,image}=this.state
+    return (
+      <div style={{color:'blue'}}>
       
-      <button  >
-          profile information
-        </button>
-      
-    </div>
-  );
-}}
-
-export default App;
+        <button onClick={()=>this.handleShow()}> {show === true ? "Hide" : "Show"}</button>
+       { show === true && <><div>{FullName}</div><h1>{profesion}</h1><h2>{bio}</h2><img src={image} alt=''/></>}
+       {show === false&& null}
+      </div>
+    )
+  }
+}
